@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.30)  30 SEP 2026 21:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.30)  30 SEP 2026 21:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -156,33 +156,115 @@ LaTeX Info: Redefining \Relbar on input line 970.
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
 )
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen168
+\ar@mcellbox=\box55
+\extrarowheight=\dimen169
+\NC@list=\toks25
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box56
+)
+\TX@col@width=\dimen170
+\TX@old@table=\dimen171
+\TX@old@col=\dimen172
+\TX@target=\dimen173
+\TX@delta=\dimen174
+\TX@cols=\count304
+\TX@ftn=\toks26
+)
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.d
 ef
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count304
+\l__color_backend_stack_int=\count305
 ) (./TP_HASH.aux
 Package babel Info: 'french' activates 'french' shorthands.
 (babel)             Reported on input line 8.
 )
 \openout1 = `TP_HASH.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Info: Redefining \degres on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Info: Redefining \degres on input line 8.
 
-Overfull \hbox (266.44191pt too wide) in paragraph at lines 13--21
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|\T1/cmr/m/n/10 Pré-calcul
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|\T1/cmr/m/n/10 Pré-calcul
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|\T1/cmr/m/n/10 Attaque
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|\T1/cmr/m/n/10 Attaque
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|$\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (26[])$
+ []
+
+
+Overfull \hbox (8.46428pt too wide) in paragraph at lines 25--25
+\T1/cmr/m/n/10 hachages($[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+\T1/cmr/m/n/10 en
+ []
+
+
+Underfull \hbox (badness 6741) in paragraph at lines 25--25
+\T1/cmr/m/n/10 un tri en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|$\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (26[] \OMS/cmsy/m/n/10 ^^A
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|$\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 )$ \T1
+/cmr/m/n/10 ou
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (1)$ \T1/cmr/m/n/10 avec
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|$\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (26[] \OMS/cmsy/m/n/10 ^^A
+ []
+
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 25--26
 [][] 
  []
 
@@ -196,26 +278,27 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3279 strings out of 469006
- 55638 string characters out of 5454813
- 468218 words of memory out of 5000000
- 32006 multiletter control sequences out of 15000+600000
+ 3413 strings out of 469006
+ 57717 string characters out of 5454813
+ 473733 words of memory out of 5000000
+ 32134 multiletter control sequences out of 15000+600000
  631257 words of font info for 46 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 56i,8n,65p,483b,385s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 56i,10n,65p,542b,385s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/boulicaut/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknapp
 en/ec/ecbx1000.600pk> </Users/boulicaut/Library/texlive/2026basic/texmf-var/fon
 ts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </Users/boulicaut/Library/texlive/2026
 basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk></usr/local/texlive/
 2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
-ive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/t
-exlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
-cal/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on TP_HASH.pdf (1 page, 69204 bytes).
+ive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/t
+exlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loca
+l/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on TP_HASH.pdf (1 page, 78308 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 129 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
