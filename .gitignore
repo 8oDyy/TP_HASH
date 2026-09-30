@@ -1,55 +1,24 @@
-# Prerequisites
-*.d
+# Exécutables
+rainbow_create
+rainbow_attack
+hash_many
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Tables générées
+t0
+t1
+t2
+t3
+t4
+t5
+t6
+t7
+t8
+t9
 
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
+# Fichiers auxiliaires LaTeX
+*.aux
+*.log
 *.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-
-# debug information files
-*.dwo
+*.fls
+*.fdb_latexmk
+*.synctex.gz

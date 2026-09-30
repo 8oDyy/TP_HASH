@@ -87,4 +87,75 @@ Conséquences :
 
 Plus $N$ et $L$ sont grands, plus les collisions sont probables (paradoxe des anniversaires), donc plus on veut couvrir de mots de passe, moins la méthode est efficace. C'est le principal défaut des hashs chaînés, et c'est ce que les rainbow tables corrigent en utilisant une fonction de réduction différente à chaque colonne : deux chaînes ne fusionnent alors que si la collision arrive à la même colonne.
 
+\section*{Question 6}
+
+\textbf{Cas $pass_{x,i} = pass_{y,j}$ avec $i \neq j$.} Ce n'est plus vraiment un problème. Les deux chaînes ont un mot de passe en commun, donc le hash suivant est le même ($h$ est déterministe), mais ensuite on applique $r_i$ dans la chaîne $x$ et $r_j$ dans la chaîne $y$. Comme $i \neq j$ ce sont deux fonctions différentes, donc en général $r_i(hash) \neq r_j(hash)$ et les chaînes se séparent tout de suite. Elles ne fusionnent pas, on a juste un seul mot de passe en double au lieu de toute la fin de chaîne.
+
+\textbf{Cas $pass_{x,i} = pass_{y,i}$ (même colonne).} Là, à partir de la colonne $i$ les deux chaînes appliquent exactement les mêmes fonctions $h, r_i, h, r_{i+1}, \ldots$ sur la même valeur, donc elles sont identiques jusqu'au bout : $pass_{x,L} = pass_{y,L}$. C'est une vraie fusion, comme avec les hashs chaînés.
+
+C'est problématique parce que la fin des deux chaînes est stockée deux fois pour rien. Mais c'est beaucoup moins grave qu'avant pour deux raisons :
+\begin{itemize}
+  \item ça n'arrive que si la collision tombe exactement dans la même colonne, ce qui est $L$ fois moins probable qu'une collision quelconque ;
+  \item on le voit directement : les deux chaînes ont le même $pass_{L}$. On peut donc détecter la fusion au moment de la création de la table et rejeter une des deux chaînes, ce qui était impossible avec les hashs chaînés quand $i \neq j$.
+\end{itemize}
+
+\section*{Question 7}
+
+On suppose que $h$ et les $r_i$ donnent des sorties uniformes dans l'espace des $26^M$ mots de passe.
+
+D'après la question 6, on a $pass_{x,L} = pass_{y,L}$ si et seulement si les deux chaînes se rencontrent dans une même colonne à un moment donné. À une colonne $i$ fixée, la probabilité que $pass_{x,i} = pass_{y,i}$ est d'environ $\frac{1}{26^M}$. Comme il y a $L$ colonnes possibles, la probabilité de collision entre les mots de passe finaux est d'environ
+\[
+p \approx \frac{L}{26^M}.
+\]
+
+Maintenant si on met $N$ chaînes dans la table, il y a environ $\frac{N^2}{2}$ paires de chaînes, donc le nombre de collisions attendu est d'environ
+\[
+\frac{N^2}{2} \cdot \frac{L}{26^M}.
+\]
+Ça devient gênant quand ce nombre approche 1 (c'est le paradoxe des anniversaires), c'est-à-dire quand $N^2 L \approx 26^M$. L'ordre de grandeur du nombre de chaînes qu'on peut insérer facilement est donc
+\[
+N \approx \sqrt{\frac{26^M}{L}}.
+\]
+
+Avec $M = 6$ et $L = 1000$ : $26^6 \approx 3{,}1 \cdot 10^8$, donc $N \approx \sqrt{3{,}1 \cdot 10^5} \approx 550$ chaînes. Au-delà, les collisions se multiplient et le programme met de plus en plus de temps à trouver des $pass_{x,0}$ qui donnent un $pass_{x,L}$ nouveau. C'est pour ça qu'on répartit les chaînes sur $R$ tables différentes.
+
+\section*{Question 8}
+
+Avec $M=6$, $R=10$, $N=100000$, $L=1000$, on trouve un antécédent pour
+\textbf{9630 hashs sur 10000} (environ 96\,\%).
+
+\textbf{Cela correspond-il aux attentes ?} Oui. Une table couvre au plus
+$N \times L = 10^8$ mots de passe, et avec $R = 10$ tables la couverture brute vaut
+$R \cdot N \cdot L = 10^9$, pour un espace de seulement $26^6 \approx 3{,}1 \cdot 10^8$
+mots de passe. Le rapport dépasse 1, mais à cause des fusions de chaînes on ne couvre
+pas tout : obtenir de l'ordre de 90--96\,\% est donc cohérent. Les tables se complètent,
+chacune rattrapant une partie des mots de passe manqués par les autres.
+
+\textbf{Temps mesurés (sur un poste ensimag).}
+\begin{itemize}
+  \item Création des 10 tables : environ 33 s (c'est $R \cdot N \cdot L = 10^9$ hachages).
+  \item Attaque : environ 438 s pour les 10000 hashs, soit environ 44 ms par hash.
+\end{itemize}
+L'attaque d'un hash coûte de l'ordre de $R \cdot L^2 / 2$ hachages (pour chaque table,
+on repart de chaque colonne). Un hash trouvé tôt est plus rapide (on s'arrête dès qu'on
+a vérifié le bon candidat) ; un hash non trouvé fait toute la recherche.
+
+\section*{Question 10}
+
+La technique standard est le \textbf{sel} (\emph{salt}). À la création d'un compte, on
+tire une valeur aléatoire unique (le sel), et on stocke $h(\text{sel} \, \| \, \text{mot de passe})$
+avec le sel en clair à côté. Deux utilisateurs ayant le même mot de passe obtiennent des
+hashs différents.
+
+Cela casse précisément l'attaque par base pré-calculée (rainbow tables incluses) : la table
+devrait être recalculée \emph{pour chaque valeur de sel}, donc le pré-calcul partagé entre
+systèmes ou entre comptes ne sert plus à rien. Il faut un sel suffisamment long et vraiment
+aléatoire pour que deux comptes n'aient jamais le même.
+
+On combine souvent le sel avec une \textbf{fonction de hachage lente et paramétrable}
+(bcrypt, scrypt, Argon2, PBKDF2), qui rend chaque calcul de hash coûteux : cela ne vise plus
+la base pré-calculée mais ralentit aussi la force brute. On peut aussi ajouter un
+\textbf{poivre} (\emph{pepper}), un secret global stocké séparément de la base.
+
 \end{document}
+ 
