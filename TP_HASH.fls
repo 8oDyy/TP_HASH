@@ -52,9 +52,13 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
 OUTPUT TP_HASH.pdf
 INPUT /usr/local/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm
 INPUT TP_HASH.aux
+INPUT /Users/boulicaut/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk
+INPUT /Users/boulicaut/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk
 INPUT /Users/boulicaut/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk
 INPUT /Users/boulicaut/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk
 INPUT /Users/boulicaut/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk
@@ -64,3 +68,4 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb

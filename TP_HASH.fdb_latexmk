@@ -1,12 +1,16 @@
 # Fdb version 4
-["pdflatex"] 1790797041.06473 "TP_HASH.tex" "TP_HASH.pdf" "TP_HASH" 1790797041.17271 0
+["pdflatex"] 1790797977.93653 "TP_HASH.tex" "TP_HASH.pdf" "TP_HASH" 1790797978.15231 0
   "/Users/boulicaut/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk" 1790791710.57068 25396 bccb0d2f322a30a2324f95a22f6b5373 ""
   "/Users/boulicaut/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk" 1790791711.18408 40112 975f90c79630abc8156e0b78b2a0f241 ""
   "/Users/boulicaut/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk" 1790791710.95125 23784 ccc474e9e59654a2f040ef397b9b6c35 ""
+  "/Users/boulicaut/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk" 1790797651.376 31872 c91b5e55f097c74744e9c03f6e37014d ""
+  "/Users/boulicaut/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk" 1790797857.36985 20008 eb3845bd2fc34dcf164cbdcc35399557 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm" 1136768653 3584 3169d30142b88a27d4ab0e3468e963a2 ""
+  "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm" 1136768653 3072 3bce340d4c075dffe6d4ec732b4c32fe ""
+  "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
@@ -14,6 +18,7 @@
   "/usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2026basic/texmf-dist/tex/generic/babel-french/french.ldf" 1755293200 47319 b47cc42e0d211cf69f68d58f695ca90c ""
   "/usr/local/texlive/2026basic/texmf-dist/tex/generic/babel-french/french3.ldf" 1755293200 58536 c1e02f18528a926fdd58d9a375f97888 ""
   "/usr/local/texlive/2026basic/texmf-dist/tex/generic/babel/babel.sty" 1771111869 147019 f2ca437186bfeb562e1066ad59426a04 ""
@@ -37,8 +42,8 @@
   "/usr/local/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1790790332 79187 e3f5941707347d15c1721f52279213a2 ""
   "/usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1790790316 2966192 5ddc65579c74e9c5061303bf3c81a92d ""
   "/usr/local/texlive/2026basic/texmf.cnf" 1772405582 628 bbc09d6d38872d53c11bb48dc9b14e88 ""
-  "TP_HASH.aux" 1790797041.15077 229 fd7ec366b6c41b015e10e341e2015fa5 "pdflatex"
-  "TP_HASH.tex" 1790797037.69488 1661 ad6e80c0ccfef1e39403d2d48b114745 ""
+  "TP_HASH.aux" 1790797978.09982 229 0cd2147b937eb267178e442c46218644 "pdflatex"
+  "TP_HASH.tex" 1790797951.33551 5864 10284071f730951ca958bcafdd166b28 ""
   (generated)
   "TP_HASH.aux"
   "TP_HASH.log"

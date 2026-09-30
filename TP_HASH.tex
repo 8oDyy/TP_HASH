@@ -34,6 +34,7 @@ Soit $M$ la longueur des mots de passe ; l'espace contient $N = 26^M$ mots de pa
 
 \textbf{Valeurs réalistes :} un GPU fait environ $2^{33}$ hashs/s et $26^M \approx 2^{4{,}7M}$, donc la force brute reste faisable jusqu'à $M \approx 10$--$11$ (environ $2^{50}$ essais, envirion 36h). Pour la base, avec environ 32 octets par entrée, 1\,To contient environ $2^{35}$ entrées on est donc limité par le stockage vers $M \approx 7$--$8$.
 
+
 \section*{Question 2}
 
 On cherche systématiquement un mot de passe \emph{final} $pass_{x,L}$ parmi les $N$
@@ -49,5 +50,41 @@ test de point final ($O(N)$ par recherche), ce qui, répété pour les $L$ valeu
 et les $R$ tables, ferait perdre tout l'intérêt de la méthode. Une indexation sur
 $pass_{x,L}$ ramène le coût de chaque test à $O(1)$ (ou $O(\log N)$), l'attaque étant
 alors dominée par le recalcul des chaînes et non par les recherches.
+
+\section*{Question 3}
+
+Non, pas forcément. Quand on tombe sur $pass_{x,L}$ après $i$ étapes, ça veut dire que la suite de calculs partie de $inputhash$ a rejoint la chaîne $x$ à un moment donné. Mais rien ne dit qu'elle l'a rejointe dès le début.
+
+La fonction $r$ envoie un espace énorme (les hashs) vers un espace plus petit (les mots de passe), donc il y a forcément des collisions : deux hashs différents peuvent donner le même mot de passe. Si $inputhash$ et $hash_{x,j}$ ont la même image par $r$, on rejoint la chaîne $x$ à partir de là et on arrive sur $pass_{x,L}$, alors que $inputhash$ n'a jamais été dans la chaîne.
+
+\begin{verbatim}
+chaine x : pass_0 -> ... -> hash_j --r--> pass_{j+1} -> ... -> pass_L
+                                            ^
+                              inputhash ----' (r donne le meme mot de passe)
+\end{verbatim}
+
+Dans ce cas le candidat qu'on reconstruit à partir de $pass_{x,0}$ est $pass_{x,L-i-1}$, dont le hash est $hash_{x,L-i-1} \neq inputhash$. On appelle ça une fausse alarme. Il faut donc toujours vérifier le candidat en calculant $h(candidat)$ et en comparant avec $inputhash$.
+
+\section*{Question 4}
+
+Non, à condition de faire la recherche complètement, c'est-à-dire tester tous les $i$ de $0$ à $L-1$ et vérifier tous les candidats trouvés (pas seulement le premier).
+
+Si le mot de passe cherché est $pass_{x,j}$ dans une chaîne $x$ (avec $j \leq L-1$), alors $inputhash = hash_{x,j}$. En appliquant $r$ on retombe sur $pass_{x,j+1}$, puis en continuant on suit exactement la chaîne $x$ et on arrive sur $pass_{x,L}$ au bout de $i = L-1-j$ étapes. Comme tout est déterministe, on le trouve forcément.
+
+Donc si aucun candidat ne marche, c'est que le mot de passe n'est dans aucune chaîne. Petite exception : les $pass_{x,L}$ eux-mêmes, dont le hash n'est jamais calculé, ne sont pas couverts par la table.
+
+\section*{Question 5}
+
+Si $pass_{x,i} = pass_{y,j}$ avec $x \neq y$ (collision), alors comme $h$ et $r$ sont déterministes, tout ce qui suit est identique dans les deux chaînes : $pass_{x,i+k} = pass_{y,j+k}$ pour tout $k$. Les deux chaînes fusionnent.
+
+Conséquences :
+\begin{itemize}
+  \item \textbf{Place et calcul gaspillés.} Tous les mots de passe après la collision sont présents deux fois. La table couvre donc moins de $N \times L$ mots de passe distincts, alors qu'on a payé le calcul de $N \times L$ hashs.
+  \item \textbf{Si $i = j$}, les deux chaînes ont le même point d'arrivée $pass_{x,L} = pass_{y,L}$. On peut le détecter au moment du pré-calcul et jeter une des deux chaînes, mais le calcul a déjà été fait pour rien.
+  \item \textbf{Si $i \neq j$}, les points d'arrivée sont différents, donc on ne voit pas la fusion dans la table. Le doublon est invisible et impossible à nettoyer.
+  \item \textbf{Plus de fausses alarmes.} Lors d'une attaque, si on tombe sur $pass_{y,L}$, on reconstruit la chaîne $y$ depuis $pass_{y,0}$, mais le mot de passe peut en fait être dans la partie de la chaîne $x$ située avant la fusion. Le candidat est faux et on a perdu du temps de calcul.
+\end{itemize}
+
+Plus $N$ et $L$ sont grands, plus les collisions sont probables (paradoxe des anniversaires), donc plus on veut couvrir de mots de passe, moins la méthode est efficace. C'est le principal défaut des hashs chaînés, et c'est ce que les rainbow tables corrigent en utilisant une fonction de réduction différente à chaque colonne : deux chaînes ne fusionnent alors que si la collision arrive à la même colonne.
 
 \end{document}
