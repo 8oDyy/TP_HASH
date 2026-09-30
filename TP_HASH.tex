@@ -29,4 +29,18 @@ Base pré-calculée & $0(26^{M})$ hachages, plus un tri en $0(26^{M*M})$ & $0(26
 
 \section*{Question 2}
 
+On cherche systématiquement un mot de passe \emph{final} $pass_{x,L}$ parmi les $N$
+chaînes stockées, afin de récupérer le $pass_{x,0}$ correspondant. La structure doit
+donc être indexée sur $pass_{x,L}$ (la clé) et renvoyer $pass_{x,0}$ (la valeur).
+
+On utilise une \textbf{table de hachage} (dictionnaire)
+$pass_{x,L} \longrightarrow pass_{x,0}$, qui permet une recherche en $O(1)$ en moyenne.
+
+
+Sans une telle structure, il faudrait parcourir linéairement les $N$ couples à chaque
+test de point final ($O(N)$ par recherche), ce qui, répété pour les $L$ valeurs de $i$
+et les $R$ tables, ferait perdre tout l'intérêt de la méthode. Une indexation sur
+$pass_{x,L}$ ramène le coût de chaque test à $O(1)$ (ou $O(\log N)$), l'attaque étant
+alors dominée par le recalcul des chaînes et non par les recherches.
+
 \end{document}
